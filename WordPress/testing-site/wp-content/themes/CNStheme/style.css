@@ -1,0 +1,320 @@
+/*
+Theme Name: Community News Theme
+Author: Nathaniel Borrok-Hoffman
+Description: My first responsive HTML5 theme
+Version: 1.0
+License: GNU General Public License v3 or later
+License URI: http://www.gnu.org/licenses/gpl-3.0.html
+*/
+
+@import url('https://fonts.googleapis.com/css?family=Domine&display=swap');
+
+@import url('https://fonts.googleapis.com/css?family=Suez One');
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display+SC:wght@900&display=swap');
+
+* {
+    /* box-sizing: border-box; */
+  }
+  
+:root {
+  --main-bg-color: #dfdfdf;
+}
+  
+  body {
+      background-color: var(--main-bg-color);
+      font-family: 'Domine', serif;
+	  
+  }
+
+.site-header,
+footer {
+  width: 100%;
+  padding-left: 1%;
+  margin-bottom: 8px;
+  background-color: var(--main-bg-color);
+}
+
+header{
+  margin-left: 0%;
+  font-weight: bold;
+}
+
+header h1{
+	margin-left:1%;
+	font-family: 'Playfair Display SC', serif;
+}
+body > header > h1 > a {
+  color: #000000;
+  font-weight: 400;
+}
+article > header {
+}
+footer {
+  margin-top: 4px;
+}
+
+/*links*/
+a{
+  text-decoration: none;
+
+}
+
+a:link, a:visited {
+  color: black;
+}
+
+a:hover {
+  color: grey;
+}
+
+/* 'Margin: 0 auto' centers block content on the page */
+.wrap {
+  width: 99%;
+  margin: 0 auto;
+  padding-top: 3%;
+}
+.content-area {
+  display: inline-block;
+}
+.content-thin {
+    width: 100%;
+}
+.content-full-width {
+    width: 100%;
+}
+.content-area,
+.primary-sidebar {
+  display: inline-block;
+}
+.primary-sidebar {
+  width: 25%;
+  padding: 1%;
+  vertical-align: top;
+  background-color: var(--main-bg-color);
+  float: right;
+  margin-right: 1.5%;
+}
+.article-loop {
+    width: 45%;
+    text-align: left;
+    margin: 5px;
+    padding: 10px;
+}
+.article-full {
+  width: 99%;
+  padding: 1%;
+}
+.article-loop,
+.article-full {
+  display: inline-block;
+  vertical-align: top;
+  background-color: var(--main-bg-color);
+  border-radius: 4px;
+  margin-bottom: 4px;
+}
+
+/*footer*/
+.site-footer{
+	margin-top: 30px;
+	border-top:2px solid #999;
+}
+
+.site-footer ul li a{
+	color: blue;
+}
+
+.site-footer ul li{
+	display: inline-block;
+	margin-left: 10px;
+}
+
+
+/*navitagion menus*/
+
+.site-nav ul{
+margin: 0;
+padding: 0;
+}
+
+.site-nav ul:before,
+.site-nav ul:after {
+content: "";
+display: table;
+}
+.site-nav ul:after {
+clear: both;
+}
+
+.site-nav ul {
+display: flex;
+justify-content: center;
+align-items: center;
+list-style: none;
+padding: 0;
+margin: 0;
+}
+
+.site-nav ul li {
+flex: 1;
+text-align: center;
+position: relative; /* added */
+}
+
+/* Site Header Menu */
+
+.site-header nav ul li {
+margin-right: 0;
+}
+
+.site-header nav ul li a:link,
+.site-header nav ul li a:visited {
+display: block;
+padding: 10px 50px;
+border-bottom: none;
+text-decoration: none;
+margin-top: 5p
+}
+
+.site-header nav ul li a:hover {
+color: grey;
+}
+
+.site-header nav ul li.current-menu-item a:link,
+.site-header nav ul li.current-menu-item a:visited {
+background-color: #006ec3;
+color: #FFF;
+}
+
+.site-nav {
+  border-top: 0.75px solid;
+  border-bottom: 0.75px solid;
+  width: 97%;
+  margin-left: 1%;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2),
+			 0px -1px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Style for the dropdown sub-menu */
+.site-nav ul.sub-menu {
+position: absolute;
+top: 100%;
+left: 0;
+width: 200px;
+display: none;
+z-index: 999;
+padding: 0;
+}
+
+.site-nav ul.sub-menu li {
+float: none;
+background-color: var(--main-bg-color);
+}
+
+.site-nav ul.sub-menu a {
+padding: 10px;
+color: #000;
+}
+
+.site-nav ul.sub-menu a:hover {
+background-color: #ddd;
+}
+
+.site-nav li:hover > ul.sub-menu {
+display: block;
+position: absolute; /* added */
+top: 100%; /* added */
+margin-left: 16%; /* added */
+}
+
+/*Grid Layout Rules */
+.wrap {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, auto);
+  grid-template-areas:
+    "main main latest"
+	"main main latest"
+    "content content content";
+}
+
+.main-article {
+  grid-area: main;
+	margin-left: 10px;
+	width: 100%;
+	height: 30%;
+}
+}
+
+.latest-posts {
+  grid-area: latest;
+}
+
+.content-area {
+  grid-area: content;
+}
+
+
+/* other rules */
+.main-article .article-loop{
+	width: 100%;
+}
+
+.sidebar aside{
+	width: 60%;
+}
+
+.latest-posts .article-loop{
+	width:90%;
+}
+
+.latest-posts {
+  border: 1px solid #838282;
+  padding: 10px;
+	margin-right: 0%;
+	margin-left:7%;
+	margin-top: 3%;
+	width: 80%;
+}
+
+  .image-container {
+    max-width: 700px; /* set the maximum width of the figure container */
+    margin: 0 auto; /* center the container horizontally */
+  }
+
+  .main-image {
+    max-width: 100%; /* make the image scale down to fit the container width */
+    height: auto; /* maintain the image's aspect ratio */
+    display: block; /* remove any extra space below the image */
+  }
+
+.post-container{
+	max-width: 75%;
+	margin: 0 auto;
+}
+
+/*latest post rules*/
+
+.latest-post-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.latest-post-header {
+  /*text-align: center;*/
+  /* margin-top: 10px; */
+}
+
+.latest-post-byline {
+  margin-top: 5px;
+}
+
+.article-loop {
+	background-color: var(--main-bg-color);
+
+}
+
+.post-container{
+	background-color: var(--main-bg-color);
+}
