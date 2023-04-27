@@ -45,7 +45,7 @@ function custom_featured_image_size() {
 add_action( 'after_setup_theme', 'custom_featured_image_size' );
 
 function latest_thumbnail_size() {
-    add_image_size( 'latest-image-size', 300, 200, true );
+    add_image_size( 'latest-image-size', 230, 130, true );
 }
 add_action( 'after_setup_theme', 'latest_thumbnail_size' );
 

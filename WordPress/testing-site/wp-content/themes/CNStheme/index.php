@@ -1,5 +1,5 @@
 <?php get_header(); ?>
-<?php $featured_query = new WP_Query( array( 'category_name' => 'featured', 'posts_per_page' => 4 ) ); ?>
+<?php $featured_query = new WP_Query( array( 'category_name' => 'featured', 'posts_per_page' => 2 ) ); ?>
 <?php $main_query = new WP_Query( array( 'category_name' => 'main', 'posts_per_page' => 1 ) ); ?>
 <?php $latest_query = new WP_Query( array('post_type' => 'post','posts_per_page' => 6,'orderby' => 'date', 'order' => 'DESC',) );?>
 
