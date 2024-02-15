@@ -33,20 +33,36 @@ function my_post_thumbnail_class( $html, $post_id, $post_thumbnail_id, $size, $a
 }
 add_filter( 'post_thumbnail_html', 'my_post_thumbnail_class', 10, 5 );
 
+/*
 function my_custom_thumbnail_size() {
-    add_image_size( 'my-thumbnail-size', 300, 200, true );
-}
-add_action( 'after_setup_theme', 'my_custom_thumbnail_size' );
+    add_image_size( 'my-thumbnail-size', 230, 150, true );
+} 
+add_action( 'after_setup_theme', 'my_custom_thumbnail_size' );*/
+
 
 //featured image functions
+
 function custom_featured_image_size() {
-  add_image_size( 'featured-image-size', 1000, 1000, true ); // adjust dimensions to your liking
+  add_image_size( 'featured-image-size', 1000, 666, true ); // adjust dimensions to your liking
 }
-add_action( 'after_setup_theme', 'custom_featured_image_size' );
+add_action( 'after_setup_theme', 'custom_featured_image_size' ); 
 
 function latest_thumbnail_size() {
-    add_image_size( 'latest-image-size', 230, 130, true );
+    add_image_size( 'latest-image-size', 490, 275, true );
 }
-add_action( 'after_setup_theme', 'latest_thumbnail_size' );
+add_action( 'after_setup_theme', 'latest_thumbnail_size' ); 
+
+function custom_author_taxonomy() {
+    register_taxonomy(
+        'story_author',
+        'post',
+        array(
+            'label' => 'Authors',
+            'hierarchical' => false,
+        )
+    );
+}
+add_action('init', 'custom_author_taxonomy');
+
 
 
